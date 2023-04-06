@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .activeLink {
+    @apply text-black;
+  }
+  .inactiveLink {
+    @apply text-slate-400;
+  }
+}
