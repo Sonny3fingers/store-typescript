@@ -54,5 +54,33 @@
     "author": "Tony Parsons",
     "price": 8,
     "imgUrl": "/images/your_neighbours_wife.jpg"
+  },
+  {
+    "id": 9,
+    "title": "City Of Bones",
+    "author": "Michael Connelly",
+    "price": 9,
+    "imgUrl": "/images/city_of_bones.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Interesting Times",
+    "author": "Terry Pratchett",
+    "price": 10,
+    "imgUrl": "/images/interesting_times.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Seven Husbands Of Evelyn Hugo",
+    "author": "Taylor Jenkins Reid",
+    "price": 8,
+    "imgUrl": "/images/seven_husbands_of_evelyn_hugo.jpg"
+  },
+  {
+    "id": 12,
+    "title": "The Night Watchman",
+    "author": "Louise Erdrich",
+    "price": 8,
+    "imgUrl": "/images/the_night_watchman.jpg"
   }
 ]
