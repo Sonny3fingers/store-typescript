@@ -19,7 +19,7 @@ const StoreItem = ({ id, title, author, price, imgUrl }: StoreItemProps) => {
           <span className="text-xs">{title}</span>
           <span className="ml-2 text-slate-400">{FormatCurrency(price)}</span>
         </div>
-        <CartButton />
+        <CartButton id={id} />
       </div>
     </div>
   );
