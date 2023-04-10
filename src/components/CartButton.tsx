@@ -9,6 +9,7 @@ const CartButton = ({ id }: CartButtonProps) => {
   const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity } =
     useCartContext();
   const quantity = getItemQuantity(id);
+
   return (
     <div className="flex justify-between items-baseline bg-blue-500 cursor-pointer rounded-md p-1 my-1 hover:bg-blue-600 transition ease-in">
       <button
@@ -28,12 +29,9 @@ const CartButton = ({ id }: CartButtonProps) => {
         >
           +
         </button>
-        <input
-          type="number"
-          className="w-6 text-center appearance-none border-none outline-none"
-          value={quantity}
-          placeholder="1"
-        />
+        <span className="w-6 text-center appearance-none border-none outline-none">
+          {quantity}
+        </span>
         <button
           className="w-6 px-1 border-2 rounded-r-md"
           onClick={() => {
