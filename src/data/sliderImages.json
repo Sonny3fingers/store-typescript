@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "imgUrl": "/images/png/hero-slider-1-min.png",
+    "desc": "Haruki Murakami"
+  },
+  {
+    "id": 2,
+    "imgUrl": "/images/png/hero-slider-2-min.png",
+    "desc": "Spring Sale"
+  },
+  {
+    "id": 3,
+    "imgUrl": "/images/png/hero-slider-3-min.png",
+    "desc": "Discount"
+  }
+]

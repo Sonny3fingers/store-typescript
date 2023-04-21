@@ -6,6 +6,7 @@ export default {
       animation: {
         fadeIn: "fadeIn 0.5s ease forwards",
         slideIn: "slideIn 0.5s 0.3s ease forwards",
+        ping: "ping 0.3s cubic-bezier(0, 0, 0.2, 1) backwards",
       },
       keyframes: {
         fadeIn: {
@@ -22,6 +23,12 @@ export default {
           },
           to: {
             transform: "translateX(0%)",
+          },
+        },
+        ping: {
+          "75%, 100%": {
+            transform: "scale(2)",
+            opacity: 0,
           },
         },
       },

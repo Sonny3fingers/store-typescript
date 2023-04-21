@@ -18,3 +18,7 @@
     margin: 0;
   }
 }
+
+.slick-dots li button::before {
+  font-size: 12px;
+}
