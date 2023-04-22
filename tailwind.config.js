@@ -27,7 +27,7 @@ export default {
         },
         ping: {
           "75%, 100%": {
-            transform: "scale(2)",
+            transform: "scale(1.1)",
             opacity: 0,
           },
         },

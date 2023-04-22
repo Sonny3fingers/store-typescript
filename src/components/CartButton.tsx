@@ -3,19 +3,28 @@ import { useCartContext } from "../context/CartContext";
 
 type CartButtonProps = {
   id: number;
+  index: number;
 };
 
-const CartButton = ({ id }: CartButtonProps) => {
-  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity } =
-    useCartContext();
+const CartButton = ({ id, index }: CartButtonProps) => {
+  const {
+    getItemQuantity,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    clickedIndex,
+  } = useCartContext();
   const quantity = getItemQuantity(id);
 
   return (
-    <div className="flex justify-between items-baseline bg-blue-500 cursor-pointer rounded-md p-1 my-1 hover:bg-blue-600 transition ease-in">
+    <div
+      className={`flex justify-between items-baseline bg-blue-500 cursor-pointer rounded-md p-1 my-1 hover:bg-blue-600 transition ease-in ${
+        index === clickedIndex ? "animate-ping" : ""
+      }`}
+    >
       <button
         className="text-white flex-1"
         onClick={() => {
-          increaseCartQuantity(id);
+          increaseCartQuantity(id, index);
         }}
       >
         Add to Cart
@@ -24,7 +33,7 @@ const CartButton = ({ id }: CartButtonProps) => {
         <button
           className="px-1 border-2 rounded-l-md"
           onClick={() => {
-            increaseCartQuantity(id);
+            increaseCartQuantity(id, index);
           }}
         >
           +
