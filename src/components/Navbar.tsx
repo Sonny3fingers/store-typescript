@@ -7,7 +7,7 @@ const Navbar = () => {
   const { cartQuantity, openCart } = useCartContext();
 
   return (
-    <nav className="px-4 shadow-sm text-xl flex items-center gap-2 sticky top-0 bg-white">
+    <nav className="px-4 shadow-sm text-xl flex items-center gap-2 sticky top-0 bg-white z-10">
       <NavLink
         to={"/"}
         className={({ isActive }) => (isActive ? "activeLink" : "inactiveLink")}

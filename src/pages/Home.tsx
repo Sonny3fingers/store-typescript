@@ -1,11 +1,12 @@
 import React from "react";
 import HeroSlider from "../components/HeroSlider";
+import Recommendations from "../components/Recommendations";
 
 const Home = () => {
   return (
     <div>
       <HeroSlider />
-      <h1>THIS IS HOME PAGE</h1>
+      <Recommendations />
     </div>
   );
 };

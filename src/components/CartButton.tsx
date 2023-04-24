@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useCartContext } from "../context/CartContext";
 
 type CartButtonProps = {
@@ -11,12 +11,38 @@ const CartButton = ({ id, index }: CartButtonProps) => {
     getItemQuantity,
     increaseCartQuantity,
     decreaseCartQuantity,
+    clickedIndexHandler,
     clickedIndex,
   } = useCartContext();
   const quantity = getItemQuantity(id);
+  const addToCartBtnRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const animationFinishedHandler = () => {
+      if (addToCartBtnRef.current) {
+        addToCartBtnRef.current.classList.remove("animate-ping");
+        clickedIndexHandler();
+      }
+    };
+    if (addToCartBtnRef.current) {
+      addToCartBtnRef.current.addEventListener(
+        "animationend",
+        animationFinishedHandler
+      );
+    }
+    return () => {
+      if (addToCartBtnRef.current) {
+        addToCartBtnRef.current.removeEventListener(
+          "animationend",
+          animationFinishedHandler
+        );
+      }
+    };
+  }, [clickedIndex]);
 
   return (
     <div
+      ref={addToCartBtnRef}
       className={`flex justify-between items-baseline bg-blue-500 cursor-pointer rounded-md p-1 my-1 hover:bg-blue-600 transition ease-in ${
         index === clickedIndex ? "animate-ping" : ""
       }`}
@@ -44,7 +70,7 @@ const CartButton = ({ id, index }: CartButtonProps) => {
         <button
           className="w-6 px-1 border-2 rounded-r-md"
           onClick={() => {
-            decreaseCartQuantity(id);
+            decreaseCartQuantity(id, index);
           }}
         >
           -
