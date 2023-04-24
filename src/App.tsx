@@ -9,7 +9,7 @@ function App() {
   return (
     <CartProvider>
       <Navbar />
-      <div className="px-4 mb-4 bg-slate-100">
+      <div className="px-4 mb-4 bg-slate-100 max-w-[1600px] mx-auto">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/store" element={<Store />} />

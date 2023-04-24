@@ -19,10 +19,7 @@ const CartButton = ({ id, index }: CartButtonProps) => {
 
   useEffect(() => {
     const animationFinishedHandler = () => {
-      if (addToCartBtnRef.current) {
-        addToCartBtnRef.current.classList.remove("animate-ping");
-        clickedIndexHandler();
-      }
+      clickedIndexHandler();
     };
     if (addToCartBtnRef.current) {
       addToCartBtnRef.current.addEventListener(
