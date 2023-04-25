@@ -10,7 +10,7 @@ const ShoppingCart = () => {
   return (
     <div className="w-full h-full">
       <div className="w-full h-full fixed top-0 left-0 right-0 bottom-0 bg-black animate-fadeIn"></div>
-      <div className="p-4 w-11/12 sm:w-3/4 h-full bg-white z-10 fixed top-0 right-0 translate-x-full animate-slideIn">
+      <div className="p-4 w-11/12 sm:w-3/4 h-full bg-white z-50 fixed top-0 right-0 translate-x-full animate-slideIn">
         <div className="flex justify-between items-center text-2xl mb-2">
           <h2>Cart</h2>
           <CloseButton />

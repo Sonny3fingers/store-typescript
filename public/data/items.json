@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "title": "Normal People",
+    "author": "Sally Rooney",
+    "price": 10,
+    "imgUrl": "/images/normal_people.jpg"
+  },
+  {
+    "id": 2,
+    "title": "A Gentleman in Moscow",
+    "author": "Amor Towles",
+    "price": 12,
+    "imgUrl": "/images/a_gentleman_in_moscow.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Into the Wild",
+    "author": "Jon Krakauer",
+    "price": 8,
+    "imgUrl": "/images/into_the_wild.jpg"
+  },
+  {
+    "id": 4,
+    "title": "It Ends With Us",
+    "author": "Collin Hoover",
+    "price": 7,
+    "imgUrl": "/images/it_ends_with_us.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Of Mice and Men",
+    "author": "John Steinbeck",
+    "price": 8,
+    "imgUrl": "/images/of_mice_and_men.jpg"
+  },
+  {
+    "id": 6,
+    "title": "The Secret History",
+    "author": "Donna Tart",
+    "price": 9,
+    "imgUrl": "/images/the_secret_history.jpg"
+  },
+  {
+    "id": 7,
+    "title": "The Wind-Up Bird Chronicle",
+    "author": "Haruki Murakami",
+    "price": 10,
+    "imgUrl": "/images/the_wind_up_bird_chronicle.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Your Neighbour's Wife",
+    "author": "Tony Parsons",
+    "price": 8,
+    "imgUrl": "/images/your_neighbours_wife.jpg"
+  },
+  {
+    "id": 9,
+    "title": "City Of Bones",
+    "author": "Michael Connelly",
+    "price": 9,
+    "imgUrl": "/images/city_of_bones.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Interesting Times",
+    "author": "Terry Pratchett",
+    "price": 10,
+    "imgUrl": "/images/interesting_times.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Seven Husbands Of Evelyn Hugo",
+    "author": "Taylor Jenkins Reid",
+    "price": 8,
+    "imgUrl": "/images/seven_husbands_of_evelyn_hugo.jpg"
+  },
+  {
+    "id": 12,
+    "title": "The Night Watchman",
+    "author": "Louise Erdrich",
+    "price": 8,
+    "imgUrl": "/images/the_night_watchman.jpg"
+  }
+]

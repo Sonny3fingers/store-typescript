@@ -30,11 +30,9 @@ const ShoppingCartItem = ({ id, quantity }: ShoppingCartItemProps) => {
             {FormatCurrency(item.price * quantity)}
           </span>
           <button
-            className="border-2 m-1 p-1 flex justify-center items-center h-5 w-5 hover:bg-slate-200"
+            className="border-2 m-1 flex justify-center items-center h-7 w-7 hover:bg-slate-200 bg-[url('../../images/icons/trashIcon.png')]"
             onClick={() => removeFromCart(id)}
-          >
-            -
-          </button>
+          ></button>
         </div>
       </div>
     </>
