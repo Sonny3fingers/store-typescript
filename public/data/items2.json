@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "title": "Normal People",
+    "author": "Sally Rooney",
+    "price": 10,
+    "imgUrl": "/images/normal_people.jpg",
+    "genre": "romance",
+    "pages": 288,
+    "description": "Follows the relationship between Marianne and Connell, as they navigate the social and cultural challenges of growing up in Ireland."
+  },
+  {
+    "id": 2,
+    "title": "A Gentleman in Moscow",
+    "author": "Amor Towles",
+    "price": 12,
+    "imgUrl": "/images/a_gentleman_in_moscow.jpg",
+    "genre": "historical fiction",
+    "pages": 480,
+    "description": "Count Rostov is sentenced to house arrest in the Metropol Hotel in Moscow, where he forms friendships and experiences the political and social changes of early 20th century Russia."
+  },
+  {
+    "id": 3,
+    "title": "Into the Wild",
+    "author": "Jon Krakauer",
+    "price": 8,
+    "imgUrl": "/images/into_the_wild.jpg",
+    "genre": "adventure",
+    "pages": 224,
+    "description": "Follows the journey of Christopher McCandless, who hitchhiked to Alaska to live in the wilderness, and died there four months later."
+  },
+  {
+    "id": 4,
+    "title": "It Ends With Us",
+    "author": "Collin Hoover",
+    "price": 7,
+    "imgUrl": "/images/it_ends_with_us.jpg",
+    "genre": "romance",
+    "pages": 384,
+    "description": "Lily falls in love with Ryle, but discovers he has a violent side. She must choose between her love for him and her own safety."
+  },
+  {
+    "id": 5,
+    "title": "Of Mice and Men",
+    "author": "John Steinbeck",
+    "price": 8,
+    "imgUrl": "/images/of_mice_and_men.jpg",
+    "genre": "drama",
+    "pages": 112,
+    "description": "Follows the story of two migrant workers, George and Lennie, and their dreams of owning their own farm."
+  },
+  {
+    "id": 6,
+    "title": "The Secret History",
+    "author": "Donna Tart",
+    "price": 9,
+    "imgUrl": "/images/the_secret_history.jpg",
+    "genre": "thriller",
+    "pages": 559,
+    "description": "A group of college students become entangled in a murder plot, and must confront the consequences of their actions."
+  },
+  {
+    "id": 7,
+    "title": "The Wind-Up Bird Chronicle",
+    "author": "Haruki Murakami",
+    "price": 10,
+    "imgUrl": "/images/the_wind_up_bird_chronicle.jpg",
+    "genre": "magical realism",
+    "pages": 607,
+    "description": "Toru Okada searches for his missing wife, and discovers a world of mysterious characters and strange happenings."
+  },
+  {
+    "id": 8,
+    "title": "Your Neighbour's Wife",
+    "author": "Tony Parsons",
+    "price": 8,
+    "imgUrl": "/images/your_neighbours_wife.jpg",
+    "genre": "Thriller",
+    "pages": 384,
+    "description": "A psychological thriller about a man who starts an affair with his neighbor's wife, only to find himself caught in a dangerous web of deceit and manipulation."
+  },
+  {
+    "id": 9,
+    "title": "City Of Bones",
+    "author": "Michael Connelly",
+    "price": 9,
+    "imgUrl": "/images/city_of_bones.jpg",
+    "genre": "Crime Fiction",
+    "pages": 432,
+    "description": "A gritty detective novel about a Los Angeles homicide detective who investigates the murder of a young girl and uncovers a dark conspiracy involving corruption and betrayal."
+  },
+  {
+    "id": 10,
+    "title": "Interesting Times",
+    "author": "Terry Pratchett",
+    "price": 10,
+    "imgUrl": "/images/interesting_times.jpg",
+    "genre": "Fantasy",
+    "pages": 416,
+    "description": "A hilarious fantasy novel about the misadventures of a bumbling wizard who inadvertently gets caught up in a revolution in a distant land."
+  },
+  {
+    "id": 11,
+    "title": "Seven Husbands Of Evelyn Hugo",
+    "author": "Taylor Jenkins Reid",
+    "price": 8,
+    "imgUrl": "/images/seven_husbands_of_evelyn_hugo.jpg",
+    "genre": "Romance",
+    "pages": 400,
+    "description": "A poignant romance novel about a Hollywood icon who reveals the secrets of her life and loves to a young journalist."
+  },
+  {
+    "id": 12,
+    "title": "The Night Watchman",
+    "author": "Louise Erdrich",
+    "price": 8,
+    "imgUrl": "/images/the_night_watchman.jpg",
+    "genre": "Historical Fiction",
+    "pages": 464,
+    "description": "A powerful historical novel based on the true story of the author's grandfather, who fought to save his tribe's land from being taken by the US government in the 1950s."
+  },
+  {
+    "id": 13,
+    "title": "The Midnight Library",
+    "author": "Matt Haig",
+    "price": 11,
+    "imgUrl": "/images/the_midnight_library.jpg",
+    "genre": "Fiction",
+    "pages": 304,
+    "description": "A heartwarming and life-affirming story about a woman who gets a chance to try out all the different paths her life could have taken."
+  },
+  {
+    "id": 14,
+    "title": "The Vanishing Half",
+    "author": "Brit Bennett",
+    "price": 12,
+    "imgUrl": "/images/the_vanishing_half.jpg",
+    "genre": "Drama",
+    "pages": 352,
+    "description": "A stunning novel about twin sisters who run away from their small, black community in the South and live very different lives, but whose fates are ultimately intertwined."
+  },
+  {
+    "id": 15,
+    "title": "The Silent Patient",
+    "author": "Alex Michaelides",
+    "price": 9,
+    "imgUrl": "/images/the_silent_patient.jpg",
+    "genre": "Thriller",
+    "pages": 336,
+    "description": "A gripping and shocking psychological thriller about a woman who shoots her husband and then refuses to speak, and the therapist who tries to unravel the mystery of why she did it."
+  }
+]

@@ -49,7 +49,7 @@ const Header = () => {
   }, [searchedTerm]);
 
   return (
-    <div className="flex flex-col gap-4 md:flex-row justify-center md:justify-between items-center top-16 left-0 sticky bg-blue-100 px-4 py-4 z-20">
+    <div className="max-w-[1700px] flex flex-col gap-4 md:flex-row justify-center md:justify-between items-center top-16 left-0 sticky bg-blue-100 mx-auto px-4 py-4 z-20">
       <img src="/images/icons/logo.png" alt="logo" />
       <div className="w-full sm:w-3/4 md:w-1/2 flex flex-col relative">
         <form className="w-full flex">
@@ -61,7 +61,7 @@ const Header = () => {
           <button className="w-6 h-auto bg-white bg-[url('../../images/icons/searchIcon.png')] bg-contain bg-no-repeat bg-center border-l-2 border-blue-200 p-1"></button>
         </form>
         {searchedTermBooks && (
-          <ul className="w-full absolute top-10 right-0 bg-white max-h-[500px] overflow-y-scroll">
+          <ul className="w-full absolute top-10 right-0 bg-white max-h-[500px] overflow-y-auto">
             {searchedTermBooks?.map((item) => (
               <SearchedTermListItem key={item.id} {...item} />
             ))}

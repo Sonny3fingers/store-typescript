@@ -1,6 +1,7 @@
 import React from "react";
 import FormatCurrency from "../utilities/FormatCurrency";
 import CartButton from "./CartButton";
+import { Link } from "react-router-dom";
 
 type StoreItemProps = {
   id: number;
@@ -28,6 +29,7 @@ const StoreItem = ({
             <span className="text-xs">{title}</span>
             <span className="ml-2 text-slate-400">{FormatCurrency(price)}</span>
           </div>
+          <Link to={`/store/${id}`}>See Book</Link>
           <CartButton id={id} index={index} />
         </div>
       </div>
