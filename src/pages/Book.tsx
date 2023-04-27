@@ -29,7 +29,7 @@ const Book = () => {
       }
     };
     fetchBooks();
-  }, []);
+  }, [bookId]);
 
   if (!book) {
     return null;

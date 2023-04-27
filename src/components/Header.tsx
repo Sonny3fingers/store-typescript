@@ -48,6 +48,10 @@ const Header = () => {
     };
   }, [searchedTerm]);
 
+  const searchedTermHandler = () => {
+    setSearchedTerm("");
+  };
+
   return (
     <div className="max-w-[1700px] flex flex-col gap-4 md:flex-row justify-center md:justify-between items-center top-16 left-0 sticky bg-blue-100 mx-auto px-4 py-4 z-20">
       <img src="/images/icons/logo.png" alt="logo" />
@@ -57,13 +61,18 @@ const Header = () => {
             type="text"
             className="flex-1 border-none outline-none px-2 py-1"
             onChange={searchInputChangeHandler}
+            value={searchedTerm ? searchedTerm : ""}
           />
           <button className="w-6 h-auto bg-white bg-[url('../../images/icons/searchIcon.png')] bg-contain bg-no-repeat bg-center border-l-2 border-blue-200 p-1"></button>
         </form>
         {searchedTermBooks && (
           <ul className="w-full absolute top-10 right-0 bg-white max-h-[500px] overflow-y-auto">
             {searchedTermBooks?.map((item) => (
-              <SearchedTermListItem key={item.id} {...item} />
+              <SearchedTermListItem
+                key={item.id}
+                {...item}
+                searchedTermHandler={searchedTermHandler}
+              />
             ))}
           </ul>
         )}
