@@ -1,13 +1,14 @@
 import React from "react";
 import items from "../data/items.json";
 import StoreItem from "./StoreItem";
+import { useDataContext } from "../context/DataContext";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const recommendItems = items.slice(3, 9);
-
 const Recommendations = () => {
+  const { books } = useDataContext();
+  const recommendItems = books.slice(3, 9);
   const settings = {
     dots: false,
     infinite: true,

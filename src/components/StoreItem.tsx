@@ -4,7 +4,7 @@ import CartButton from "./CartButton";
 import { Link } from "react-router-dom";
 
 type StoreItemProps = {
-  id: number;
+  id: string;
   title: string;
   author: string;
   price: number;

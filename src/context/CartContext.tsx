@@ -1,7 +1,5 @@
 import React, { useState, ReactNode, createContext, useContext } from "react";
 import ShoppingCart from "../components/ShoppingCart";
-// import { toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
 
 type CartProviderProps = {
   children: ReactNode;
@@ -10,10 +8,10 @@ type CartProviderProps = {
 type CartContextProps = {
   openCart: () => void;
   closeCart: () => void;
-  getItemQuantity: (id: number) => number;
-  increaseCartQuantity: (id: number, index: number) => void;
-  decreaseCartQuantity: (id: number, index: number) => void;
-  removeFromCart: (id: number) => void;
+  getItemQuantity: (id: string) => number;
+  increaseCartQuantity: (id: string, index: number) => void;
+  decreaseCartQuantity: (id: string, index: number) => void;
+  removeFromCart: (id: string) => void;
   clickedIndexHandler: () => void;
   cartQuantity: number;
   cartItems: CartItemProps[];
@@ -21,7 +19,7 @@ type CartContextProps = {
 };
 
 type CartItemProps = {
-  id: number;
+  id: string;
   quantity: number;
 };
 
@@ -51,10 +49,10 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     (quantity, item) => item.quantity + quantity,
     0
   );
-  const getItemQuantity = (id: number) => {
+  const getItemQuantity = (id: string) => {
     return cartItems.find((item) => item.id === id)?.quantity || 1;
   };
-  const increaseCartQuantity = (id: number, index: number) => {
+  const increaseCartQuantity = (id: string, index: number) => {
     setCartItems((currItems) => {
       if (currItems.find((item) => item.id === id) == null) {
         return [...currItems, { id, quantity: 1 }];
@@ -70,7 +68,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     });
     setClickedIndex(index);
   };
-  const decreaseCartQuantity = (id: number, index: number) => {
+  const decreaseCartQuantity = (id: string, index: number) => {
     setCartItems((currItems) => {
       if (currItems.find((item) => item.id === id)?.quantity === 1) {
         return currItems.filter((item) => item.id !== id);
@@ -86,7 +84,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     });
     setClickedIndex(index);
   };
-  const removeFromCart = (id: number) => {
+  const removeFromCart = (id: string) => {
     setCartItems((currItems) => {
       return currItems.filter((item) => item.id !== id);
     });

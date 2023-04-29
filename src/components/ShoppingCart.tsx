@@ -1,12 +1,13 @@
 import React from "react";
 import { useCartContext } from "../context/CartContext";
+import { useDataContext } from "../context/DataContext";
 import CloseButton from "./CloseButton";
 import ShoppingCartItem from "./ShoppingCartItem";
 import FormatCurrency from "../utilities/FormatCurrency";
-import items from "../data/items.json";
 
 const ShoppingCart = () => {
   const { cartItems } = useCartContext();
+  const { books } = useDataContext();
   return (
     <div className="w-full h-full">
       <div className="w-full h-full fixed top-0 left-0 right-0 bottom-0 bg-black animate-fadeIn"></div>
@@ -23,7 +24,7 @@ const ShoppingCart = () => {
             Total:{" "}
             {FormatCurrency(
               cartItems.reduce((total, cartItem) => {
-                const item = items.find((item) => item.id === cartItem.id);
+                const item = books.find((item) => item.id === cartItem.id);
                 return total + (item?.price || 0) * cartItem.quantity;
               }, 0)
             )}

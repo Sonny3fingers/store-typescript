@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useCartContext } from "../context/CartContext";
 
 type CartButtonProps = {
-  id: number;
+  id: string;
   index: number;
 };
 

@@ -1,12 +1,13 @@
-import React from "react";
-import items from "../data/items.json";
 import StoreItem from "../components/StoreItem";
+import { useDataContext } from "../context/DataContext";
 
 const Store = () => {
+  const { books } = useDataContext();
+
   return (
     <div>
       <div className="flex flex-col justify-center items-center gap-8 py-10 sm:flex-row sm:flex-wrap">
-        {items.map((item, index) => (
+        {books.map((item, index) => (
           <StoreItem key={item.id} {...item} index={index} />
         ))}
       </div>

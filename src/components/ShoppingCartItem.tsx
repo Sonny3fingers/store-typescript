@@ -1,15 +1,16 @@
 import React from "react";
-import items from "../data/items.json";
 import FormatCurrency from "../utilities/FormatCurrency";
 import { useCartContext } from "../context/CartContext";
+import { useDataContext } from "../context/DataContext";
 
 type ShoppingCartItemProps = {
-  id: number;
+  id: string;
   quantity: number;
 };
 
 const ShoppingCartItem = ({ id, quantity }: ShoppingCartItemProps) => {
-  const item = items.find((item) => item.id === id);
+  const { books } = useDataContext();
+  const item = books.find((item) => item.id === id);
 
   const { removeFromCart } = useCartContext();
 
