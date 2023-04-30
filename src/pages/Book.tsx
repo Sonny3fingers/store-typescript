@@ -1,37 +1,64 @@
-import React, { useEffect, useState } from "react";
+import React, {
+  ReactComponentElement,
+  ReactNode,
+  useEffect,
+  useState,
+} from "react";
 import { useParams } from "react-router-dom";
 import CartButton from "../components/CartButton";
+import { useDataContext } from "../context/DataContext";
 
-type StoreItemProps = {
-  id: number;
+type BookProps = {
+  id: string;
   title: string;
   author: string;
   price: number;
   imgUrl: string;
+  genre: string;
+  pages: number;
+  description: string;
   index: number;
 };
 
+type BooksProps = BookProps[];
+
 const Book = () => {
-  const [book, setBook] = useState<StoreItemProps | null>(null);
+  const [book, setBook] = useState<BookProps | null>(null);
   const bookId = useParams();
+  const { books } = useDataContext();
+  let bookDetails: BookProps | null = null;
+  books.forEach((item, index) => {
+    if (item.id === bookId.id) {
+      bookDetails = { ...item, index };
+    }
+  });
 
   useEffect(() => {
-    const fetchBooks = async () => {
-      const response = await fetch("../../data/items.json");
-      const data = await response.json();
+    setBook(bookDetails);
+  }, []);
 
-      if (!bookId.id) {
-        return;
-      } else {
-        const id = parseInt(bookId.id);
-        const bookDetails = data.find((item: StoreItemProps) => item.id === id);
-        setBook(bookDetails);
-      }
-    };
-    fetchBooks();
-  }, [bookId]);
+  // const bookDetails = books.find((item: BookProps) => item.id === bookId.id);
+  // setBook(bookDetails);
 
-  if (!book) {
+  // useEffect(() => {
+  //   const fetchBooks = async () => {
+  //     const response = await fetch("../../data/items.json");
+  //     const data = await response.json();
+
+  //     if (!bookId.id) {
+  //       return;
+  //     } else {
+  //       const id = parseInt(bookId.id);
+  //       const bookDetails = data.find((item: StoreItemProps) => item.id === id);
+  //       setBook(bookDetails);
+  //     }
+  //   };
+  //   fetchBooks();
+  // }, [bookId]);
+
+  if (!book) return null;
+
+  if (Object.keys(book).length === 0) {
     return null;
   }
 
