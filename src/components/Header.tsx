@@ -1,17 +1,20 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import SearchedTermListItem from "./SearchedTermListItem";
+import { useDataContext } from "../context/DataContext";
 
 type StoreItemProps = {
-  id: number;
+  id: string;
   title: string;
   author: string;
   price: number;
   imgUrl: string;
-  index: number;
+  genre: string;
+  pages: number;
+  description: string;
 };
 
 const Header = () => {
-  const [books, setBooks] = useState<StoreItemProps[]>([]);
+  // const [books, setBooks] = useState<StoreItemProps[]>([]);
   const [searchedTermBooks, setSearchedTermBooks] = useState<
     StoreItemProps[] | null
   >(null);
@@ -20,14 +23,16 @@ const Header = () => {
     setSearchedTerm(e.target.value);
   };
 
-  useEffect(() => {
-    const fetchBooks = async () => {
-      const response = await fetch("../../data/items.json");
-      const data = await response.json();
-      setBooks(data);
-    };
-    fetchBooks();
-  }, []);
+  const { books } = useDataContext();
+
+  // useEffect(() => {
+  //   const fetchBooks = async () => {
+  //     const response = await fetch("../../data/items.json");
+  //     const data = await response.json();
+  //     setBooks(data);
+  //   };
+  //   fetchBooks();
+  // }, []);
 
   useEffect(() => {
     const identifier = setTimeout(() => {

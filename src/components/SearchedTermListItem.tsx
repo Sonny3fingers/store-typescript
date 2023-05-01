@@ -2,12 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 type StoreItemProps = {
-  id: number;
+  id: string;
   title: string;
   author: string;
   price: number;
   imgUrl: string;
-  index: number;
   searchedTermHandler: () => void;
 };
 

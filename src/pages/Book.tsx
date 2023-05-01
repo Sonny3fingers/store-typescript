@@ -35,26 +35,7 @@ const Book = () => {
 
   useEffect(() => {
     setBook(bookDetails);
-  }, []);
-
-  // const bookDetails = books.find((item: BookProps) => item.id === bookId.id);
-  // setBook(bookDetails);
-
-  // useEffect(() => {
-  //   const fetchBooks = async () => {
-  //     const response = await fetch("../../data/items.json");
-  //     const data = await response.json();
-
-  //     if (!bookId.id) {
-  //       return;
-  //     } else {
-  //       const id = parseInt(bookId.id);
-  //       const bookDetails = data.find((item: StoreItemProps) => item.id === id);
-  //       setBook(bookDetails);
-  //     }
-  //   };
-  //   fetchBooks();
-  // }, [bookId]);
+  }, [bookId]);
 
   if (!book) return null;
 
@@ -72,9 +53,13 @@ const Book = () => {
       <div className="flex flex-col flex-1 p-4">
         <h3 className="text-xl lg:text-3xl text-slate-500">{book.title}</h3>
         <h4 className="text-lg lg:text-xl mb-4">by {book.author}</h4>
-        <span>genre: ?</span>
-        <span>pages: ?</span>
-        <p>description: ?</p>
+        <span className="text-slate-500 sm:text-xl mb-2">{book.genre}</span>
+        <span className="text-slate-500 sm:text-xl mb-2">
+          {book.pages} pages
+        </span>
+        <p className="text-slate-700 text-justify sm:text-xl mb-2">
+          {book.description}
+        </p>
         <div className="mt-auto w-full md:w-1/2">
           <CartButton id={book.id} index={book.index} />
         </div>
