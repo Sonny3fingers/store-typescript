@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useCartContext } from "../context/CartContext";
+import { toast } from "react-toastify";
 
 type CartButtonProps = {
   id: string;
@@ -48,6 +49,7 @@ const CartButton = ({ id, index }: CartButtonProps) => {
         className="text-white flex-1"
         onClick={() => {
           increaseCartQuantity(id, index);
+          toast.success("Added to Cart");
         }}
       >
         Add to Cart
@@ -57,6 +59,7 @@ const CartButton = ({ id, index }: CartButtonProps) => {
           className="px-1 border-2 rounded-l-md"
           onClick={() => {
             increaseCartQuantity(id, index);
+            toast.success("Added to Cart");
           }}
         >
           +
@@ -68,6 +71,7 @@ const CartButton = ({ id, index }: CartButtonProps) => {
           className="w-6 px-1 border-2 rounded-r-md"
           onClick={() => {
             decreaseCartQuantity(id, index);
+            toast.success("Removed from Cart");
           }}
         >
           -

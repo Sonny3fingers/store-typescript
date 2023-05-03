@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { collection, getDocs, query } from "firebase/firestore";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { db } from "../firebase.config";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Store from "./pages/Store";
@@ -11,6 +13,7 @@ import Header from "./components/Header";
 import Book from "./pages/Book";
 import { CartProvider } from "./context/CartContext";
 import { useDataContext } from "./context/DataContext";
+import Spinner from "./components/Spinner";
 
 interface BookProps {
   id: string;
@@ -65,9 +68,9 @@ function App() {
             pages: firestoreBook.pages,
             description: firestoreBook.description,
           };
+
           return books.push(book);
         });
-        // setBooks(books);
         addBooksToContextHandler(books);
         setIsLoading(false);
       } catch (error) {
@@ -84,7 +87,7 @@ function App() {
       <Header />
       <div className="px-4 bg-slate-100 max-w-[1700px] min-h-[590px] mx-auto">
         {isLoading ? (
-          <h2>Loading...</h2>
+          <Spinner />
         ) : books && books.length > 0 ? (
           <Routes>
             <Route path="/" element={<Home />} />
@@ -96,6 +99,7 @@ function App() {
           <p>There are no books in database.</p>
         )}
       </div>
+      <ToastContainer />
     </CartProvider>
   );
 }

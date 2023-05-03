@@ -19,7 +19,11 @@ const SearchedTermListItem = ({
 }: StoreItemProps) => {
   return (
     <li className="flex items-center gap-1 p-1 border-b-2 border-slate-200 transition-all ease-in hover:bg-slate-200">
-      <Link to={`/store/${id}`} onClick={searchedTermHandler}>
+      <Link
+        to={`/store/${id}`}
+        onClick={searchedTermHandler}
+        className="flex items-center gap-1 p-1 w-full"
+      >
         <img src={imgUrl} alt="cover" className="w-10" />
         <div className="flex flex-col">
           <span>{title}</span>

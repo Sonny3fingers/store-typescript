@@ -1,6 +1,8 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import SearchedTermListItem from "./SearchedTermListItem";
 import { useDataContext } from "../context/DataContext";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 type StoreItemProps = {
   id: string;
@@ -14,25 +16,19 @@ type StoreItemProps = {
 };
 
 const Header = () => {
-  // const [books, setBooks] = useState<StoreItemProps[]>([]);
+  const [term, setTerm] = useState("");
   const [searchedTermBooks, setSearchedTermBooks] = useState<
     StoreItemProps[] | null
   >(null);
   const [searchedTerm, setSearchedTerm] = useState<string | null>(null);
+
+  const navigate = useNavigate();
+
   const searchInputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchedTerm(e.target.value);
   };
 
   const { books } = useDataContext();
-
-  // useEffect(() => {
-  //   const fetchBooks = async () => {
-  //     const response = await fetch("../../data/items.json");
-  //     const data = await response.json();
-  //     setBooks(data);
-  //   };
-  //   fetchBooks();
-  // }, []);
 
   useEffect(() => {
     const identifier = setTimeout(() => {
@@ -54,14 +50,33 @@ const Header = () => {
   }, [searchedTerm]);
 
   const searchedTermHandler = () => {
+    setSearchedTermBooks(null);
     setSearchedTerm("");
+  };
+
+  const submitHandler = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!searchedTerm) {
+      return;
+    }
+    const result = books.filter(
+      (item) => item.title.toLowerCase() === searchedTerm?.toLowerCase()
+    );
+    const book = result[0];
+    if (result && result.length > 0) {
+      setSearchedTermBooks(null);
+      setSearchedTerm("");
+      navigate(`/store/${book.id}`);
+    } else {
+      toast.error("Searched term not found");
+    }
   };
 
   return (
     <div className="max-w-[1700px] flex flex-col gap-4 md:flex-row justify-center md:justify-between items-center top-16 left-0 sticky bg-blue-100 mx-auto px-4 py-4 z-20">
       <img src="/images/icons/logo.png" alt="logo" />
       <div className="w-full sm:w-3/4 md:w-1/2 flex flex-col relative">
-        <form className="w-full flex">
+        <form className="w-full flex" onSubmit={submitHandler}>
           <input
             type="text"
             className="flex-1 border-none outline-none px-2 py-1"
