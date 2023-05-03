@@ -1,4 +1,3 @@
-import React from "react";
 import { useCartContext } from "../context/CartContext";
 import { useDataContext } from "../context/DataContext";
 import CloseButton from "./CloseButton";

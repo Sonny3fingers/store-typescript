@@ -1,5 +1,3 @@
-import React from "react";
-import items from "../data/items.json";
 import StoreItem from "./StoreItem";
 import { useDataContext } from "../context/DataContext";
 import Slider from "react-slick";
